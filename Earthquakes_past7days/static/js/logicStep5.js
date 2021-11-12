@@ -2,14 +2,10 @@
 // Add console.log to check to see if our code is working.
 console.log("working");
 
-// 2.	// Create the map object with center and zoom level.
-// let map = L.map('mapid').setView([30, 30], 2);
-
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,    
     accessToken: API_KEY
-    //mapbox://styles/mapbox/navigation-night-v1
 });
 
 // We create the dark view tile layer that will be an option for our map.
@@ -121,8 +117,7 @@ legend.onAdd = function() {
     "#ee9c00",
     "#ea822c",
     "#ea2c2c"
-  ];
-    labels = [];
+  ];   
   let div = L.DomUtil.create("div", "info legend");
   
 

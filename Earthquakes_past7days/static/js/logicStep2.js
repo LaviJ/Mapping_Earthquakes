@@ -1,9 +1,6 @@
-// Mod 13.6.1 Add Earthquake Data to a Map
+// Mod 13.6.1 & 13.6.2
 // Add console.log to check to see if our code is working.
 console.log("working");
-
-// 2.	// Create the map object with center and zoom level.
-// let map = L.map('mapid').setView([30, 30], 2);
 
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
