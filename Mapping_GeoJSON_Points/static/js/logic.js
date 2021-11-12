@@ -89,7 +89,7 @@ d3.json(airportData).then(function(data) {
   //adding the oneach function
     onEachFeature: function(feature, layer) {
       console.log(layer);
-      layer.bindPopup("<h1>" + "Airport code : " + feature.properties.faa + "----------------------------" + "Airport name: " + feature.properties.name + "</h1>");
+      layer.bindPopup("<h3> Airport code : " + feature.properties.faa + "</h3> <hr><h3> Airport name: " + feature.properties.name + "</h3>");
      }
   }).addTo(map);
 });
