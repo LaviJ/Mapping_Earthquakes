@@ -43,16 +43,15 @@ console.log("working");
 // }
 // }).addTo(map);
 
-let night = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/night-v1/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,    
+let night = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/navigation-guidance-night-v4/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
     accessToken: API_KEY
-    //mapbox://styles/mapbox/navigation-night-v1
 });
 
 // We create the day view tile layer that will be an option for our map.
-let day = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/day-v1/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
+let day = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/navigation-guidance-day-v4/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     accessToken: API_KEY
 });
@@ -96,7 +95,7 @@ d3.json(torontoData).then(function(data) {
   //adding the oneach function
     onEachFeature: function(feature, layer) {
       console.log(layer);
-      layer.bindPopup("<h3> Airport code : " + feature.properties.faa + "</h3> <hr><h3> Airport name: " + feature.properties.name + "</h3>");
+      layer.bindPopup("<h3> Airline code : " + feature.properties.airline + "</h3> <hr><h3> Airline destination: " + feature.properties.dst + "</h3>");
      }
   }).addTo(map);
 });
