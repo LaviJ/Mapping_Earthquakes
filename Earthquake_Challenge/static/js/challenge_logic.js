@@ -152,7 +152,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
 // 5. Change the color function to use three colors for the major earthquakes based on the magnitude of the earthquake.
   function getColor(magnitude) {
     if (magnitude > 6) {
-      return "#880808";
+      return "#800000";
     }
     if (magnitude > 5) {
       return "#ea2c2c";
@@ -195,7 +195,7 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
 });
 
   // Here we create a legend control object.
-let legend = L.control({
+let legend = L.control({  
   position: "bottomright"
 });
 
@@ -203,7 +203,8 @@ let legend = L.control({
 legend.onAdd = function() {
   let div = L.DomUtil.create("div", "info legend");
 
-  const magnitudes = [0, 1, 2, 3, 4, 5];
+  const magnitudes = [0, 1, 2, 3, 4, 5];  
+  // const title = "Magnitudes";
   const colors = [
     "#98ee00",
     "#d4ee00",
@@ -214,6 +215,7 @@ legend.onAdd = function() {
   ];
 
 // Looping through our intervals to generate a label with a colored square for each interval.
+  div.innerHTML = "Magnitude<br>";
   for (var i = 0; i < magnitudes.length; i++) {
     console.log(colors[i]);
     div.innerHTML +=
